@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using System.Windows.Forms;
 
 namespace Multi_Con_C
 {
@@ -12,13 +13,9 @@ namespace Multi_Con_C
     {
         static void Main(string[] args)
         {
-            Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            s.Connect("127.0.0.1", 8);
-            Console.WriteLine("connetion...!");
-            Console.ReadKey();
-            s.Close();
-            s.Dispose();
-
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Main());
         }
     }
 }
